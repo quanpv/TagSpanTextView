@@ -33,6 +33,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
+import android.text.style.BackgroundColorSpan;
 import android.text.style.ClickableSpan;
 import android.text.style.ImageSpan;
 import android.util.AttributeSet;
@@ -45,13 +46,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * This view extends TextView and convert an array list of Strings to a grid formed by clickable
- * tags for each string in the array. You can specify the color also if it's a checkable grid or
- * just clickable.
- * Class to fix the span errors
- * Created by marcel on 18/05/15.
- */
 public class GridSpanTextView extends TextView {
 
     private int tagViewId;
@@ -117,9 +111,13 @@ public class GridSpanTextView extends TextView {
             Drawable bd = convertViewToDrawable(tv);
             bd.setBounds(0, 0, bd.getIntrinsicWidth() + 5, bd.getIntrinsicHeight());
             sb.append(txt).append(" ");
-            sb.setSpan(new ImageSpan(bd), sb.length() - (txt.length() + 1), sb.length() - 1,
-                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            sb.setSpan(new TouchableSpan(checkedColor, tag), sb.length() - (txt.length() + 1),
+//            sb.setSpan(new ImageSpan(bd), sb.length() - (txt.length() + 1), sb.length() - 1,
+//                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            sb.setSpan(new TouchableSpan(checkedColor, tag),sb.length() - (txt.length() + 1),
+                    sb.length() - 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//            sb.setSpan(new BackgroundColorSpan(R.color.gray),sb.length() - (txt.length() + 1),
+//                    sb.length() - 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            sb.setSpan(new RoundedBackgroundSpan(getContext()),sb.length() - (txt.length() + 1),
                     sb.length() - 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         setMovementMethod(LinkTouchMovementMethod.getInstance());
@@ -192,6 +190,7 @@ public class GridSpanTextView extends TextView {
                     imgSpan[0].getDrawable().setColorFilter(checkedColor, PorterDuff.Mode.SRC_ATOP);
                 }
             }
+            
         }
 
         @Override

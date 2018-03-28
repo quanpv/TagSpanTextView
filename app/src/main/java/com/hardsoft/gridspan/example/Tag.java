@@ -1,8 +1,6 @@
 package com.hardsoft.gridspan.example;
 
-/**
- * Created by Marcel on 19/07/2015.
- */
+
 public class Tag {
     private String id;
     private String title;

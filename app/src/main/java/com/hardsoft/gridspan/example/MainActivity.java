@@ -23,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
 
     private ArrayList<Tag> getHardCodeTags() {
         ArrayList<Tag> tags = new ArrayList<>();
-        tags.add(new Tag("1", "Vegetarish"));
+        tags.add(new Tag("1", "Vegetarish1234556677889858575"));
         tags.add(new Tag("2", "Vegan"));
         tags.add(new Tag("3", "Glutenfrei"));
         tags.add(new Tag("4", "Meat"));
@@ -32,8 +32,8 @@ public class MainActivity extends ActionBarActivity {
         tags.add(new Tag("7", "Beer"));
         tags.add(new Tag("8", "Tag with spaces"));
         tags.add(new Tag("9", "Short"));
-        tags.add(new Tag("10", "<b>Html Tag</b>"));
-        tags.add(new Tag("11", "<i>Italic</i>"));
+        tags.add(new Tag("10", "hehe"));
+        tags.add(new Tag("11", "hahahaah"));
         return tags;
     }
 }
