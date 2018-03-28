@@ -20,8 +20,8 @@ public class RoundedBackgroundSpan extends ReplacementSpan {
 
     public RoundedBackgroundSpan(Context context) {
         super();
-        backgroundColor = context.getResources().getColor(R.color.gray);
-        textColor = context.getResources().getColor(R.color.white);
+        backgroundColor = context.getResources().getColor(R.color.orange);
+        textColor = context.getResources().getColor(R.color.blue);
     }
 
     @Override
